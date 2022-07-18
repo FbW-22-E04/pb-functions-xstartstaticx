@@ -145,17 +145,6 @@ function ExOh(str) {
 }
 console.log("Q11:", ExOh("ooxx"));
 
-// function countOccurences(string, letter) {
-//   let counter = 0;
-//   for (let i = 0; i < string.length; i++) {
-//     if (string[i] == letter) {
-//       counter++;
-//     }
-//   }
-//   return counter;
-// }
-// console.log("Q5:", countOccurences("this is a string", "i"));
-
 // 12 isPrime
 function isPrime(num) {
   for (let i = 2; i < num; i++) {
@@ -167,3 +156,25 @@ console.log("Q12:", isPrime(0));
 console.log("Q12:", isPrime(7));
 console.log("Q12:", isPrime(9));
 console.log("Q12:", isPrime(10));
+
+// 13 Validate Email
+function checkEmail(email) {
+  // console.log("there is @ in email", email.indexOf("@"));
+  // console.log("there is @ in email", email.lastIndexOf("@"));
+  if (
+    email.indexOf("@") !== email.lastIndexOf("@") ||
+    email.indexOf(".") === -1 ||
+    email.lastIndexOf(".") < email.indexOf("@") ||
+    email[email.length - 1] === "." ||
+    email[email.length - 1] === "@" ||
+    email.includes(".a") ||
+    email.includes("@.") ||
+    email.includes("..") ||
+    email[0] === "@"
+  ) {
+    return false;
+  }
+  return true;
+}
+
+console.log("Q13:", checkEmail("email@email.com"));
